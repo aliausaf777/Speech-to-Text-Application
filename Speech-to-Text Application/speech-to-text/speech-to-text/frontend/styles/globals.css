@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0a0a0a;
+  --paper: #f5f0e8;
+  --accent: #e84c1e;
+  --muted: #8a8070;
+  --border: #d4cfc4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink text-paper font-mono text-sm px-6 py-3 transition-all duration-150;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .btn-primary:hover {
+    @apply bg-accent;
+  }
+  .btn-secondary {
+    @apply border border-ink text-ink font-mono text-sm px-6 py-3 transition-all duration-150 bg-transparent;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .btn-secondary:hover {
+    @apply bg-ink text-paper;
+  }
+  .btn-danger {
+    @apply border border-accent text-accent font-mono text-sm px-4 py-2 transition-all duration-150 bg-transparent;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .btn-danger:hover {
+    @apply bg-accent text-paper;
+  }
+}
